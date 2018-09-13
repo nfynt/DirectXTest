@@ -33,11 +33,11 @@ void Bullet::Render(Graphics *graphics) const
 
 	DummyVert square[5] =
 	{
-		{-RADIUS, -RADIUS, 0.0f, 0xffffffff},
-		{-RADIUS,  RADIUS, 0.0f, 0xffffffff},
-		{ RADIUS,  RADIUS, 0.0f, 0xffffffff},
-		{ RADIUS, -RADIUS, 0.0f, 0xffffffff},
-		{-RADIUS, -RADIUS, 0.0f, 0xffffffff},
+		{-RADIUS, -RADIUS, 0.0f, 0xff00ffff},
+		{-RADIUS,  RADIUS, 0.0f, 0xff00ffff },
+		{ RADIUS,  RADIUS, 0.0f, 0xff00ffff },
+		{ RADIUS, -RADIUS, 0.0f, 0xff00ffff },
+		{-RADIUS, -RADIUS, 0.0f, 0xff00ffff },
 	};
 
 	D3DXVECTOR3 position = GetPosition();

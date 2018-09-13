@@ -142,7 +142,7 @@ void Game::InitialiseLevel(int numAsteroids)
 	if (scorePopDur_ > 0)
 		scorePopDur_ = 0;
 
-	if (currLevel_ > 0)
+	if (currLevel_ > 2)
 	{
 		float halfWidth = 800.0f * 0.5f;
 		float halfHeight = 600.0f * 0.5f;

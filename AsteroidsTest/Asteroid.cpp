@@ -41,11 +41,11 @@ void Asteroid::Render(Graphics *graphics) const
 
 	DummyVert square[5] =
 	{
-		{-1.0f, -1.0f, 0.0f, 0xffffffff},
-		{-1.0f,  1.0f, 0.0f, 0xffffffff},
-		{ 1.0f,  1.0f, 0.0f, 0xffffffff},
-		{ 1.0f, -1.0f, 0.0f, 0xffffffff},
-		{-1.0f, -1.0f, 0.0f, 0xffffffff},
+		{-1.0f, -1.0f, 0.0f, 0xffff0000},
+		{-1.0f,  1.0f, 0.0f, 0xffff0000 },
+		{ 1.0f,  1.0f, 0.0f, 0xffff0000 },
+		{ 1.0f, -1.0f, 0.0f, 0xffff0000 },
+		{-1.0f, -1.0f, 0.0f, 0xffff0000 },
 	};
 
 	D3DXMATRIX scaleMatrix;
@@ -76,6 +76,7 @@ void Asteroid::Render(Graphics *graphics) const
 	graphics->DisableLighting();
 	graphics->SetModelMatrix(&asteroidTransform);
 	graphics->DrawImmediate(D3DPT_LINESTRIP,
+		//D3DPT_POINTLIST,
 		4,
 		&square[0],
 		sizeof(square[0]));

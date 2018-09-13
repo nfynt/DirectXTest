@@ -35,12 +35,14 @@ void Enemy::Render(Graphics *graphics) const
 		D3DCOLOR diffuse;
 	};
 
-	DummyVert axis[8] =
+	DummyVert axis[11] =
 	{
-		{ 0.0f, -7.0f, 0.0f, 0xffffffff },{ 0.0f, 15.0f, 0.0f, 0xffffffff },
-	{ -7.0f, 0.0f, 0.0f, 0xffff00ff },{ 7.0f, 0.0f, 0.0f, 0xffff00ff },
-	{ 0.0f, 15.0f, 0.0f, 0xffff00ff },{ -7.0f, 7.0f, 0.0f, 0xffff00ff },
-	{ 0.0f, 15.0f, 0.0f, 0xffff00ff },{ 7.0f, 7.0f, 0.0f, 0xffff00ff },
+		{ 0.0f, 12.0f, 0.0f, 0xffff00ff },{ 12.0f, 0.0f, 0.0f, 0xffff00ff },
+	{ 12.0f, 0.0f, 0.0f, 0xffff00ff },{ -12.0f, 0.0f, 0.0f, 0xffff00ff },
+	{ -12.0f, 0.0f, 0.0f, 0xffff00ff },{ 0.0f, 12.0f, 0.0f, 0xffff00ff },
+	{ 10.0f, 0.1f, 0.0f, 0xffff00ff },{ 0.0f, -10.0f, 0.0f, 0xffff00ff },
+	{ 0.0f, -10.0f, 0.0f, 0xffff00ff },{ -10.0f, -0.1f, 0.0f, 0xffff00ff }
+	//{ -12.0f, 0.0f, 0.0f, 0xff00ff00 },{ 12.0f, 0.0f, 0.0f, 0xff00ff00 },
 	};
 
 	D3DXMATRIX rotationMatrix;
@@ -63,7 +65,7 @@ void Enemy::Render(Graphics *graphics) const
 	graphics->DisableLighting();
 	graphics->SetModelMatrix(&shipTransform);
 	graphics->DrawImmediate(D3DPT_LINELIST,
-		4,
+		10,
 		&axis[0],
 		sizeof(axis[0]));
 	graphics->SetModelMatrix(&identityMatrix);
